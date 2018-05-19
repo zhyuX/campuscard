@@ -1,0 +1,130 @@
+/*********************
+ * 投贷宝微信前端CSS2&3
+ * 
+ * Date : 2014/11/30
+ * Auth : M & L
+ */
+/* 初始化样式 */
+html, body, div, dl, dd, dt, a, i, form, input { margin:0; padding:0; font-size:12px; font-family:'Microsoft YaHei'}
+html { height:100%}
+a { display:-moz-inline-stack; display:inline-block; zoom:1; *display:inline; text-decoration:none; cursor:pointer; color:#2d2e2d}
+i { display:-moz-inline-stack; display:inline-block; font-style:normal}
+img { border:0}
+:focus { outline:none}
+input[type=button], input[type=submit], input[type=reset] { -webkit-appearance:none}
+li{margin:0;padding:0;font-weight: normal;}
+a,li{color: inherit; font-family: inherit;text-decoration:none;}
+li{list-style: none;}
+i, em { font-style: normal;}
+ul{padding-left:0;list-style-type:none;list-style:none}
+
+
+
+/* 网站头部 */
+header.header { position:relative; width:100%; min-height:50px; padding:0px; box-shadow:0 0 1px #555; background: #0697da;}
+header.header .logo { float:left; margin:10px 0px 0px 10px}
+header.header .logo img { width:150px; height:30px;}
+header.header .topleft { position:absolute; top:13px; color:#fff; left:160px; font-size:14px;}
+header.header .topleft i { position:absolute; top:3px; left:0px;}
+header.header .topleft e { position:absolute; top:3px; left:17px; width:50px; text-align:left;}
+header.header .nav-top-bar { float:right; width:20px; height:20px; margin-top:15px; margin-right:10px; background:url(../images/menu.png) no-repeat; background-size:20px 20px; padding-bottom:15px;}
+header.header .nav-top-nickname { clear:both; height:30px; line-height:30px; text-align:right; font-size:15px; color:#008000; padding-right:10px;}
+header.header .header-nav { clear:both; display:none; width:100%; height:90px; padding-top:15px; left:0px; text-align:center; background:#fff; border-bottom:1px solid #eee; z-index:99}
+header.header .header-nav a { width:50px; text-align:center; margin:0 20px; font-size:14px}
+header.header .header-nav a img { display:block; width:50px; margin-bottom:5px}
+
+/***子页面头部***/
+.navigation-bar{ background:#0697da; line-height:50px; color:#fff; position:relative;}
+.navigation-bar a.z-01{ position:absolute; left:10px; top:50%;margin-top:-15px; background:url(../images/ico-top4.png) no-repeat; background-size: contain; width: 2.1rem; height: 4.4rem;}
+.navigation-bar a.z-02{ position:absolute; right:10px; top:30%;margin-top:-11px; background:url(../images/home.png) no-repeat; background-size: contain; width: 3.0rem; height: 4.4rem;}
+.navigation-bar a.z-03{ position:absolute; left:10px; top:30%;margin-top:-11px; background:url(../images/home.png) no-repeat; background-size: contain; width: 3.0rem; height: 4.4rem;}
+.navigation-bar a.z-04{ position:absolute; right:10px; top:40%;margin-top:-15px; background:url(../images/settings.png) no-repeat; background-size: contain; width: 3.0rem; height: 4.4rem;}
+.navigation-bar span{ font-size:20px; text-align:center; display:inline-block; width:100%;}
+.header-navmenu { clear:both; display:none; width:100%; height:90px; padding-top:15px; left:0px; text-align:center; background:#fff; border-bottom:1px solid #eee; z-index:99}
+.header-navmenu a { width:50px; text-align:center; margin:0 20px; font-size:14px}
+.header-navmenu a img { display:block; width:50px; margin-bottom:5px}
+
+/* 网站底部 */
+.border_t { border-top: 1px solid #e1e1e1;}
+.footer{position:fixed;bottom:0;left:0;width:100%; height:5.0rem;background-color:#fff;overflow:hidden;text-align:center;z-index:99;}
+.nav_top{top:4.4rem;left:0;display:none;}
+.footer a{width:25%;float: left;box-sizing: border-box;font-size:1rem;height:5.0rem;}
+.footer a span{width:25px;height:25px;margin:.8rem auto .2rem;display:block;}
+.footer a:nth-child(1) span{background:url(../images/ico_foot1.png) no-repeat center center;background-size:contain;}
+.footer a:nth-child(2) span{background:url(../images/ico_foot2.png) no-repeat center center;background-size:contain;}
+.footer a:nth-child(3) span{background:url(../images/ico_foot3.png) no-repeat center center;background-size:contain;}
+.footer a:nth-child(4) span{background:url(../images/ico_foot4.png) no-repeat center center;background-size:contain;}
+.footer a span:hover,.footer a span.nav_on{color:#0697da;}
+.footer a:nth-child(1).nav_on span{background-image:url(../images/ico_foota.png);}
+.footer a:nth-child(2).nav_on span{background-image:url(../images/ico_footb.png);}
+.footer a:nth-child(3).nav_on span{background-image:url(../images/ico_footc.png);}
+.footer a:nth-child(4).nav_on span{background-image:url(../images/ico_footd.png);}
+
+/***安全设置***/
+.setting{background-color:#f8f8f8;color:#333}
+.setting .container{width:100%}
+.setting .col-gr{color:#999;padding-right:0}
+.setting-news div .pr-no,.setting-news div p .pr-no{padding-right:0}
+.setting-news div .pl-no,.setting-news div p .pl-no{padding-left:0}
+.verify-count{font-size:13px;height:30px;width:100%;line-height:30px;padding:0 10px;font-weight:400;color:#e85526;background-color:#ddd;-webkit-border-radius:1px;border-radius:1px}
+.set-icon{padding-top:15px}
+.setting-news div{height:55px;line-height:55px;border-top:1px solid #ccc}
+.setting-news .set-amend{height:45px;line-height:45px;background-color:#fff}
+.setting-news .set-amend a{color:#333}
+.setting-news .set-new-det{display:block;background-color:#fff;height:100%}
+.setting-news .set-new-det p{height:45px;line-height:45px;width:90%;margin-left:5%;margin-bottom:0;border-bottom:1px solid #ccc}
+.setting-news .set-new-det span:first-child{padding-left:0}
+.setting-news .set-new-det .set-indent{text-indent:1em}
+.setting-news .set-new-det .bd-no{border-bottom:none}
+.setting-news .set-news-im{line-height:20px;height:55px;font-size:12px;color:#999}
+.setting-news .set-news-im p{width:90%;margin-left:5%;padding-top:5px;margin-bottom:0}
+.setting-news .set-news-im p span{color:#8AB4E0}
+.login-password{background-color:#f8f8f8;padding-bottom:20px}
+.login-password .container-fluid .pay-p{line-height:38px;font-size:12px;margin-top:10px}
+.login-password .container-fluid .form-inline{margin-top:0;margin-bottom:20px}
+.login-password .container-fluid .form-inline input{width:60%;margin-bottom:0}
+.login-password .container-fluid .form-inline .inline-btn{width:35%;height:45px}
+.login-password .container-fluid form{margin-top:10px}
+.login-password .container-fluid form .form-group{position:relative}
+.login-password .container-fluid form div .login-input{margin-bottom:20px}
+.login-password .container-fluid form div .login-button{color:#fff;font-size:16px;margin-top:5px;height:40px}
+.login-password .container-fluid form div .login-button.default{background-color:#f0f0f0;color:#c2c2c2;margin-top:5px;height:40px}
+.login-password .container-fluid form div .error{position:absolute;right:19px;top:14px;font-size:13px;color:red}
+.login-password .container-fluid form input{height:45px;line-height:25px;border:1px solid #d7d7d7;color:#999;font-weight:100;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px;font-size:14px;box-shadow:none;margin-bottom:10px}
+.login-password .container-fluid p{margin-bottom:0}
+.login-password .container-fluid p span{color:#8AB4E0}
+.login-password .container-fluid .but-tc{margin-top:50%}
+.login-password .container-fluid .modal-header{border-bottom:none}
+.login-password .container-fluid .modal-content{width:90%;margin-left:5%;height:165px}
+.login-password .container-fluid .modal-header p{line-height:50px;font-size:16px}
+.login-password .container-fluid .modal-footer{padding:15px;text-align:right;border-top:1px solid #e5e5e5;width:90%;margin-left:5%}
+.login-password .form-group{position:relative}
+.login-password .error{position:absolute;top:14px;right:19px;color:red}
+.real-name{padding-bottom:200px}
+.real-name .header{margin-bottom:10px;height:40px;background:#fff;border-bottom:1px #c8c8c8 solid}
+.real-name .tip-info{margin-bottom:10px;text-align:left}
+.telephone-wrapper .form-group{position:relative;height:45px; overflow:hidden;}
+.telephone-wrapper .form-group .form-control{height:45px;line-height:45px}
+.telephone-wrapper .form-group.has-error .form-control:focus,.telephone-wrapper .form-group.has-success .form-control:focus{border-color:#a94442}
+.telephone-wrapper .form-group .error-tip{position:absolute;top:15px;right:8%;font-size:12px;color:#a94442;z-index:1000}
+.telephone-wrapper .form-group.sms-captcha .error-tip{right:50%}
+.telephone-wrapper .telephone-form{margin-top:40px;margin-bottom:100px}
+.telephone-wrapper .telephone-form ::-moz-placeholder{color:#999}
+.telephone-wrapper .telephone-form ::-webkit-input-placeholder{color:#999}
+.telephone-wrapper .telephone-form :-ms-input-placeholder{color:#999}
+.telephone-wrapper .telephone-form .form-group{height:45px}
+.telephone-wrapper .telephone-form .form-control{font-size:14px;height:45px;width:92%;margin:0 auto;line-height:45px;color:#000;border-color:#d7d7d7;border-radius:0;-webkit-box-shadow:none;box-shadow:none}
+.telephone-wrapper .telephone-form .sms-captcha .form-control{display:inline-block;width:50%;margin-left:4%}
+.telephone-wrapper .telephone-form .sms-captcha-button{width:40%;margin-left:2%;height:43px;line-height:45px;font-size:16px;padding:0}
+.telephone-wrapper .telephone-form .phone-bind-button{width:92%;margin-left:4%;height:43px;line-height:45px;font-size:16px;padding:0;margin-top:20px}
+.telephone-wrapper .telephone-form .phone-bind-button .button-loading{position:absolute;display:none;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6) url(../../../../commons/loading-spokes.svg) no-repeat center;border-radius:0}
+.m-wrapper,.navbar-wrapper{min-width:320px;max-width:640px;height:100%;margin:auto}
+.wrapper{min-width:320px;max-width:640px;height:100%;margin:auto}
+.container-fluid{padding-left:15px;margin-right:auto;margin-left:auto}
+.input-lg{height:46px;padding:10px 16px;font-size:18px;line-height:1.3333333;border-radius:6px}
+.form-control{display:block;width:98%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+.waves-button,.waves-button-input,.waves-button:focus,.waves-button:hover,.waves-button:visited{color:#fff;background-color:#f1483c}
+.text-center{ text-align:center;}
+.pull-right {
+float: right!important; margin-right:10px;
+}

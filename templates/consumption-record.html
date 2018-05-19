@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link href="/static/css/consumption-record.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+		<!--必要样式-->
+<link rel="stylesheet" type="text/css" href="/static/css/component.css" />
+	</head>
+	<body>
+		<header class="ui-header ui-header-positive ui-border-b">
+            <i class="ui-icon-return" onclick="history.back()"></i><h1>消费记录 </h1>
+{#            <button href="personal-center.html" class="ui-btn">回首页</button>#}
+            <a href="/index/"><button class="ui-btn">回首页</button>  </a>
+        </header>
+        
+         <footer class="ui-footer ui-footer-btn">
+             <ul class="ui-tiled ui-border-t">
+                <li class="ui-border-r"><a href="/index/" style="color: #0caffa">个人中心 </a></li>
+                <li class="ui-border-r"><a href="" style="color: #0caffa">我的卡券 </a></li>
+                <li class="ui-border-r"><a href="" style="color: #0caffa">设置 </a></li>
+            </ul>
+        </footer>
+        
+        <br /> <br />  <br /> <br />
+		
+<section class="job-module"> 
+	<dl class="retrie" > 
+		<dt>
+			<a id="area" href="javascript:;">筛选时间 </a>
+			<a id="wage" href="javascript:;">筛选地点</a>
+		</dt> 
+		<dd class="area"> 
+			<ul class="slide downlist"> 
+				<li><a href="#" onclick="showAndHiddenAll()">全部</a></li> 
+				<li><a href="#" onclick="showAndHiddenToday()">今日</a></li> 
+				<li><a href="#">近两天</a></li> 
+				<li><a href="#">近三日</a></li> 
+				<li><a href="#">近一周</a></li> 
+				<li><a href="#">近一个月</a></li> 
+				<li><a href="#">近一年</a></li> 
+			</ul> 
+		</dd> 
+		<dd class="wage"> 
+			<ul class="slide downlist"> 
+				<li><a href="#">不限</a></li> 
+				<li><a href="#">家人超市</a></li> 
+				<li><a href="#">家和堂</a></li> 
+				<li><a href="#">达克布蕾</a></li> 
+				<li><a href="#">养贤府</a></li> 
+				<li><a href="#">西九便民点</a></li> 
+				<li><a href="#">西九超市</a></li> 
+				<li><a href="#">语林便民点</a></li> 
+				<li><a href="#">语林超市</a></li> 
+				<li><a href="#">缙云烧饼</a></li> 
+				<li><a href="#">其他..</a></li> 
+			</ul> 
+		</dd> 
+	</dl> 
+</section> 
+
+<div class="component" id="today" style.display=='block'>
+		<table>
+			<thead>
+				<tr>
+					<th>今日</th>
+					
+				</tr>
+			</thead>
+			<thead>
+				<tr>
+					<th>时间</th>
+					<th>地点</th>
+					<th>金额</th>
+					<th>状态</th>
+				</tr>
+			</thead>
+			<tbody>
+{#				<tr><td class="user-name">7:00</td><td class="user-name">食堂</td><td class="user-phone">5¥</td><td class="user-mobile">无</td></tr>#}
+{#				<tr><td class="user-name">9:56</td><td class="user-email">超市</td><td class="user-phone">9¥</td><td class="user-mobile">无</td></tr>#}
+{#				<tr><td class="user-name">11:57</td><td class="user-email">食堂</td><td class="user-phone">9.7¥</td><td class="user-mobile">无</td></tr>#}
+				{% for row in consume_today %}
+                    <tr><td class="user-name">{{ row.time }}</td><td class="user-name">{{ row.location }}</td><td class="user-phone">{{ row.value }}</td><td class="user-mobile">正常</td></tr>
+				{% endfor %}
+
+			</tbody>
+		</table>
+	</div>
+	
+	
+	
+	<div class="component" id="5.9" style.display=='block'>
+		<table>
+			<thead>
+				<tr>
+					<th>本周记录</th>
+					
+				</tr>
+			</thead>
+			<thead>
+				<tr>
+					<th>时间</th>
+					<th>地点</th>
+					<th>金额</th>
+					<th>状态</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for row in consume %}
+                    <tr><td class="user-name">{{ row.time }}</td><td class="user-name">{{ row.location }}</td><td class="user-phone">{{ row.value }}</td><td class="user-mobile">正常</td></tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+
+        <div class="text-center" id="queryTips" style="text-align: center" >更多记录查询请联系校园卡管理中心</div>
+
+<script type="text/javascript" src="/static/js/consumption-record.js"></script>
+<script type="text/javascript">
+$(function(){ 
+	$('.retrie dt a').click(function(){
+		var $t=$(this);
+		if($t.hasClass('up')){
+			$(".retrie dt a").removeClass('up');
+			$('.downlist').hide();
+			$('.mask').hide();
+		}else{
+			$(".retrie dt a").removeClass('up');
+			$('.downlist').hide();
+			$t.addClass('up');
+			$('.downlist').eq($(".retrie dt a").index($(this)[0])).show();
+			$('.mask').show();
+		}
+	});
+	$(".area ul li a:contains('"+$('#area').text()+"')").addClass('selected');
+	$(".wage ul li a:contains('"+$('#wage').text()+"')").addClass('selected');
+});
+</script> 
+
+	</body>
+</html>

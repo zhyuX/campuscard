@@ -15,8 +15,15 @@ Including another URLconf
 """
 # from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 import xadmin
 
+from user.views import LoginView, IndexView, ConsumeRecordView, BorrowInfoView
+
 urlpatterns = [
-    path('xadmin/', xadmin.site.urls),
+    path('admin/', xadmin.site.urls),
+    path('index/', IndexView.as_view(), name='index'),
+    path('login/', LoginView.as_view(), name='login'),
+    path('consume_record/', ConsumeRecordView.as_view(), name='consume_record'),
+    path('borrow_info/', BorrowInfoView.as_view(), name='borrow_info'),
 ]

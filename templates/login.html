@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="/static/js/mui.min.js"></script>
+    <link href="/static/css/mui.min.css" rel="stylesheet"/>
+    <link href="/static/css/login.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">用户登录</h1>
+		</header>
+		
+		<div class="mui-content">
+			<form action="" method="post" id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<label>卡号</label>
+					<input name='account' id='account' type="text" class="mui-input-clear mui-input" placeholder="请输入卡号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input name='password' id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入密码">
+				</div>
+                <div class="mui-text-center" id="loginTips" style="color: red">{{ msg }}</div>
+				<ul class="mui-table-view mui-table-view-chevron">
+					<li class="mui-table-view-cell">
+						自动登录
+						<div id="autoLogin" class="mui-switch">
+							<div class="mui-switch-handle"></div>
+						</div>
+					</li>
+				</ul>
+
+                <div class="mui-content-padded">
+                    <button name='login' type="submit" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
+                    <div class="link-area"><a id='reg'>激活账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a> <span class="spliter">|</span> <a id='forgetPassword'>紧急冻结</a>
+                    </div>
+                </div>
+            {% csrf_token %}
+            </form>
+			<div class="mui-content-padded oauth-area">
+
+			</div>
+		</div>
+	
+</body>
+</html>
