@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.views.generic import TemplateView
 import xadmin
 
@@ -34,4 +34,6 @@ urlpatterns = [
     path('pay_auth_set/', PayAuthSetView.as_view(), name='pay_auth_set'),
     path('ticket/', TicketView.as_view(), name='ticket'),
     path('logout/', logout, name='logout'),
+    path('operation/', include('operation.urls'))
+
 ]

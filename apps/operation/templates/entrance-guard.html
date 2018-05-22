@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/css/domain.css">
+</head>
+<body>
+	<div>
+	<header>
+<h1>选择门禁环境</h1>
+
+</header>
+
+{#	#}
+{#<div class="demo">	#}
+{#  <form action="" method=post name="creator" enctype="multipart/form-data"> #}
+{#	#}
+{#  </form>#}
+{#</div>#}
+
+<div class="demo">	
+  <form action="" method="post" name="creator" enctype="multipart/form-data">
+      <div>选择地点 ：
+      <select name="loc" id = "loc">
+        <option value="图书馆">图书馆</option>
+        <option value="宿舍">宿舍</option>
+        <option value="实验室">实验室</option>
+        <option value="体育馆">体育馆</option>
+      </select>
+    </div>
+      <br>
+	<div>学号 ：
+     <input type="text" id="student-ID" name="student-ID" value="">
+    </div>
+       <div>
+           <br>
+      <button name='confirm' type="submit" class="mui-btn mui-btn-block mui-btn-primary">确认</button>
+      </div>
+      <br>
+      {% csrf_token %}
+  </form>
+    <br>
+    <p>{{ rlt }}</p>
+</div>
+
+{#<div id="scan_click">  #}
+{#        <a id="btscan" href="#">扫 描</a>  #}
+{#</div>  #}
+{#<div id="scan_click">  #}
+{#        <a id="btscan" href="#">确 认</a>  #}
+{#</div> #}
+</div>
+</body>
+</html>
