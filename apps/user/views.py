@@ -117,7 +117,7 @@ class BorrowInfoView(View):
             return HttpResponseRedirect("/login/")
 
 
-# 充值 ing
+# 充值
 class RechargeView(View):
     def get(self, request):
         account = request.session.get('card_id', None)

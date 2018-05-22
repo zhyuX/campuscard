@@ -60,7 +60,7 @@ ROOT_URLCONF = 'campuscard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'apps/user/templates')],
         'DIRS': [os.path.join(BASE_DIR, 'apps/operation/templates')],
         'APP_DIRS': True,
         'OPTIONS': {

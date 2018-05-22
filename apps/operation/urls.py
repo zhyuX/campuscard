@@ -19,7 +19,7 @@ from django.urls import path
 from django.views.generic import TemplateView
 import xadmin
 
-from operation.views import borrowingView,consumpView,entrance_guardView
+from operation.views import borrowingView,consumpView,entrance_guardView, IndexView
 
 
 urlpatterns = [
@@ -27,5 +27,6 @@ urlpatterns = [
     path('borrowing/', borrowingView.as_view(), name='borrowing'),
     path('consump/', consumpView.as_view(), name='consump'),
     path('entrance_guard/', entrance_guardView.as_view(), name='entrance_guard'),
+    path('index/', IndexView.as_view(), name='index')
 
 ]
