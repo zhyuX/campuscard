@@ -11,12 +11,12 @@
       	mui.init();
     </script>
 </head>
-<body>
 		<header class="mui-bar mui-bar-nav">
 			<h1 class="mui-title">用户登录</h1>
 		</header>
-		
+		<br>
 		<div class="mui-content">
+            <img src="/static/images/login-pic.png" style="width:360px;height:250px;z-index:0;"/>
 			<form action="" method="post" id='login-form' class="mui-input-group">
 				<div class="mui-input-row">
 					<label>卡号</label>
@@ -40,10 +40,13 @@
                     <button name='login' type="submit" class="mui-btn mui-btn-block mui-btn-primary">登录</button>
                     <div class="link-area"><a id='reg'>激活账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a> <span class="spliter">|</span> <a id='forgetPassword'>紧急冻结</a>
                     </div>
+                    <br> <br><br> <br><br> <br><br>
                 </div>
             {% csrf_token %}
             </form>
+            <br> <br><br> <br>
 			<div class="mui-content-padded oauth-area">
+
 
 			</div>
 		</div>

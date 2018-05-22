@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/about-me.css">
+	</head>
+	<body>
+		
+    {% include 'base.html' with title='我的' %}
+        <br /> <br /> 
+        
+        <!-- 中间内容 -->
+<div class="summary">
+  <div class="head"><img id="photoImage" src="/static/images/sjl.png" alt="" style="width:80px;height:80px;z-index:0;"> <span class="username">{{ student.name }}</span>
+    <div class="headamount">
+      <div class="p-amount"> <i>学号 </i><br>
+        {{ student.student_id }} </div>
+      <div class="p-amount"> <i>
+        <label> 学院</label>
+        </i><br>
+        {{ student.college }} </div>
+    </div>
+  </div>
+</div>
+		
+<div class="personal">
+  <div class="personalout"> <a class="plist" href="/update_password/"> <span class="picon1"></span><span class="ptit">登录密码设置</span><span class="iconarrow"></span> </a> </div>
+  </br>
+  <div class="personalout"> <a class="plist" href="/payment_set/"> <span class="picon4"></span><span class="ptit">支付设置</span><span class="iconarrow"></span> </a> </div>
+  <div class="personalout"> <a class="plist" href="/pay_auth_set/"> <span class="picon5"></span><span class="ptit">支付验证设置</span><span class="iconarrow"></span> </a> </div>
+  </br>
+   <div class="personalout"> <a class="plist" href="#"> <span class="picon2"></span><span class="ptit">通用</span><span class="iconarrow"></span> </a> </div>
+  <div class="personalout"> <a class="plist" href="#"> <span class="picon3"></span><span class="ptit">关于</span><span class="iconarrow"></span> </a> </div>
+</div>
+
+<div class="ui-btn-wrap">
+                <button onclick="window.location.href='/logout/'" class="ui-btn-lg ui-btn-danger">
+                    退  出  登  录
+                </button>
+ </div>
+ 
+ </br></br></br></br>
+	</body>
+</html>

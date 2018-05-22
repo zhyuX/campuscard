@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/login-password.css" />
+	</head>
+	<body>
+		{% include 'base.html' with title='登陆密码设置' %}
+        <br /> <br /> <br /> 
+        
+        
+        <!-- 中间内容 -->
+<div class="m-wrapper">
+  <div class="wrapper   ">
+    <div class="login-password">
+      <div class="container-fluid">
+        <form action="/update_password/" class="set-password" id="set-password" method="post" >
+          <div class="form-group item">
+            <input type="password" class="form-control input-lg login-input" id="old_password" name="old_password" tabindex="1" placeholder="请输入原登录密码">
+          </div>
+          <div class="item form-group">
+            <input type="password" class="form-control input-lg" id="new_password" name="new_password" tabindex="2" placeholder="请输入新登录密码">
+          </div>
+          <div class="form-group item">
+            <input type="password" class="form-control input-lg" id="confirm_password" name="confirm_password" tabindex="3" placeholder="请确认新登录密码">
+          </div>
+          <div  class="form-group item">
+            <button name='confirm' type="submit" class="waves-button form-control login-button input-lg waves-effect" tabindex="4" >确定</button>
+            <!-- Modal -->
+          </div>
+            {% csrf_token %}
+        </form>
+        <div>
+          <p class="text-center ui-fs-12 text-nowrap">若您无法通过该方式找回密码，请联系客服电话</p>
+          <p class="text-center ui-fs-12 text-nowrap"><span>15869132812</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	</body>
+</html>

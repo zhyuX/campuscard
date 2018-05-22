@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+{#		<link rel="stylesheet" type="text/css" href="/static/css/recharge.css">#}
+		<link rel="stylesheet" type="text/css" href="/static/css/recharge2.css">
+	</head>
+	<body>
+		{% include 'base.html' with title='校园卡充值' %}
+{#        <br /> #}
+
+        <div class="pay">
+			<!--主内容开始编辑-->
+			<div class="tr_recharge">
+				<div class="tr_rechtext">
+					<p class="te_retit"><img src="/static/images/coin.png" alt="" />充值中心</p>
+					<p>1.请确认您的姓名与学号，如果姓名与学号不匹配，则将无法成功充值。</p>
+					<p>2.请确认您的充值金额，充值成功后将无法退款</p>
+				</div>
+				<form action="" method="post" class="am-form" id="doc-vld-msg">
+					<div class="tr_rechbox">
+						<div class="tr_rechhead">
+							<img src="/static/images/ys_head2.jpg" />
+							<p>充值帐号：
+								<a>{{ name }}</a>
+							</p>
+							<br>
+							<p>充值卡号：
+								<a>{{ id }}</a>
+							</p>
+							<div class="tr_rechheadcion">
+								<img src="/static/images/coin.png" alt="" />
+								<span>当前余额：<span>{{ balance }}¥</span></span>
+							</div>
+						</div>
+						<div class="tr_rechli am-form-group">
+							<ul class="ui-choose am-form-group" id="uc_01">
+								<li>
+									<label class="am-radio-inline">
+								        	<input type="radio"  value="" name="docVlGender" required data-validation-message="请选择一项充值额度"> 10￥
+									    </label>
+								</li>
+								<li>
+									<label class="am-radio-inline">
+									        <input type="radio" name="docVlGender" data-validation-message="请选择一项充值额度"> 20￥
+								      	</label>
+								</li>
+
+								<li>
+									<label class="am-radio-inline">
+									        <input type="radio" name="docVlGender" data-validation-message="请选择一项充值额度"> 50￥
+								        </label>
+								</li>
+								<li>
+									<label class="am-radio-inline">
+									        <input type="radio" name="docVlGender" data-validation-message="请选择一项充值额度" >自定金额
+								        </label>
+								</li>
+							</ul>
+							
+						</div>
+                        <div class="tr_rechoth am-form-group">
+							<span>其他金额：</span>
+							<input name="recharge_value" type="number" min="10" max="10000" value="10.00元" class="othbox" data-validation-message="充值金额范围：10-10000元" />
+							<!--<p>充值金额范围：10-10000元</p>-->
+						</div>
+
+						<div class="tr_rechcho am-form-group">
+							<span>充值方式：</span>
+							<label class="am-radio">
+							        <input type="radio" name="radio" value="wechatpay" data-am-ucheck required data-validation-message="请选择一种充值方式"><img src="/static/images/wechatpay.png"  style="width:90px;height:30px;z-index:0;" />
+							    </label>
+							<label class="am-radio" style="margin-right:20px;">
+							        <input type="radio" name="radio"  value="alipay" data-am-ucheck data-validation-message="请选择一种充值方式"><img src="/static/images/zfbpay.png" style="width:90px;height:30px;z-index:0;" />
+							    </label>
+						</div>
+						<div class="rechnum">
+							<span>应付金额：</span>
+							<p class="rechnum"  >{% block money %}0.00元 {% endblock %}</p>
+						</div>
+					</div>
+					<div class="tr_paybox" style="text-align: center;">
+						<input type="submit" value="确认支付" class="tr_pay am-btn" style="font-size: 35px" />
+                        <br>
+						<span>温馨提示：如无法成功充值请联系管理员。</span>
+					</div>
+                    {% csrf_token %}
+				</form>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="/static/js/jquery-2.1.1.min.js"></script>
+		<script type="text/javascript" src="/static/js/amazeui.min.js"></script>
+		<script type="text/javascript" src="/static/js/ui-choose.js"></script>
+
+		<script type="text/javascript">
+			// 将所有.ui-choose实例化
+			$('.ui-choose').ui_choose();
+			// uc_01 ul 单选
+			var uc_01 = $('#uc_01').data('ui-choose'); // 取回已实例化的对象
+			uc_01.click = function(index, item) {
+				console.log('click', index, item.text())
+			}
+			uc_01.change = function(index, item) {
+				console.log('change', index, item.text())
+			}
+			$(function() {
+				$('#uc_01 li:eq(3)').click(function() {
+					$('.tr_rechoth').show();
+					$('.tr_rechoth').find("input").attr('required', 'true')
+					$('.rechnum').text('15.00元');
+				})
+				$('#uc_01 li:eq(0)').click(function() {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('10.00元');
+					$('.othbox').val('10');
+				})
+				$('#uc_01 li:eq(1)').click(function() {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('20.00元');
+					$('.othbox').val('20');
+				})
+				$('#uc_01 li:eq(2)').click(function() {
+					$('.tr_rechoth').hide();
+					$('.rechnum').text('50.00元');
+					$('.othbox').val('50');
+				})
+				$(document).ready(function() {
+					$('.othbox').on('input propertychange', function() {
+						var num = $(this).val();
+						$('.rechnum').html(num + ".00元");
+					});
+				});
+			})
+
+			$(function() {
+				$('#doc-vld-msg').validator({
+					onValid: function(validity) {
+						$(validity.field).closest('.am-form-group').find('.am-alert').hide();
+					},
+					onInValid: function(validity) {
+						var $field = $(validity.field);
+						var $group = $field.closest('.am-form-group');
+						var $alert = $group.find('.am-alert');
+						// 使用自定义的提示信息 或 插件内置的提示信息
+						var msg = $field.data('validationMessage') || this.getValidationMessage(validity);
+
+						if(!$alert.length) {
+							$alert = $('<div class="am-alert am-alert-danger"></div>').hide().
+							appendTo($group);
+						}
+						$alert.html(msg).show();
+					}
+				});
+			});
+		</script>
+        
+        {% block tip %} {% endblock %}
+	</body>
+</html>

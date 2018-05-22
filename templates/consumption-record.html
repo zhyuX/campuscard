@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title></title>
 		<link href="/static/css/consumption-record.css" rel="stylesheet" />
 		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
@@ -9,19 +10,7 @@
 <link rel="stylesheet" type="text/css" href="/static/css/component.css" />
 	</head>
 	<body>
-		<header class="ui-header ui-header-positive ui-border-b">
-            <i class="ui-icon-return" onclick="history.back()"></i><h1>消费记录 </h1>
-{#            <button href="personal-center.html" class="ui-btn">回首页</button>#}
-            <a href="/index/"><button class="ui-btn">回首页</button>  </a>
-        </header>
-        
-         <footer class="ui-footer ui-footer-btn">
-             <ul class="ui-tiled ui-border-t">
-                <li class="ui-border-r"><a href="/index/" style="color: #0caffa">个人中心 </a></li>
-                <li class="ui-border-r"><a href="" style="color: #0caffa">我的卡券 </a></li>
-                <li class="ui-border-r"><a href="" style="color: #0caffa">设置 </a></li>
-            </ul>
-        </footer>
+		{% include 'base.html' with title='消费记录' %}
         
         <br /> <br />  <br /> <br />
 		

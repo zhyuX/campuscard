@@ -2,65 +2,36 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="/static/css/borrow-info.css">
 		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
 	</head>
 	<body>
-		<header class="ui-header ui-header-positive ui-border-b">
-            <i class="ui-icon-return" onclick="history.back()"></i><h1>借阅信息 </h1><a href="/index/"><button class="ui-btn">回首页</button></a>
-        </header>
+		{% include 'base.html' with title='借阅信息' %}
         
-         <footer class="ui-footer ui-footer-btn">
-             <ul class="ui-tiled ui-border-t">
-                <li class="ui-border-r"><a href="/index/" style="color: #0caffa">个人中心 </a></li>
-                <li class="ui-border-r"><a href="" style="color: #0caffa">我的卡券 </a></li>
-                <li class="ui-border-r"><a href="" style="color: #0caffa">设置 </a></li>
-            </ul>
-        </footer>
-        
-        <br /> <br /> 
+        <br /> <br />
         
         
         <div class="personal">
-             <div class="personalout"> <a class="plist" href="#"> <span class="picon5"></span><span class="ptit">当前借阅：（<i class="pink">4</i> 本）</span><span class="iconarrow"></span> </a> </div>
-             <div class="personalout"> <a class="plist" href="#"> <span class="picon5"></span><span class="ptit">超期：（<i class="pink">1</i> 本）</span><span class="iconarrow"></span> </a> </div>
+             <div class="personalout"> <a class="plist" href="#"> <span class="picon5"></span><span class="ptit">当前借阅：（<i class="pink">{{ books_num }}</i> 本）</span><span class="iconarrow"></span> </a> </div>
+             <div class="personalout"> <a class="plist" href="#"> <span class="picon5"></span><span class="ptit">超期：（<i class="pink">{{ books_over_time_num }}</i> 本）</span><span class="iconarrow"></span> </a> </div>
              
         </div>
         
          <div class="index-list-wrap">
     
-    <div class="index-pad"> <a class="index-list index-che" >
-      <div class="main-l"> <span class="per">钢铁是怎样炼成的</span> </div>
-      <div class="list-main">
-        <div class=" clear "> <span class="circle-blue circle-c57">2018.<i>4.30</i></span> <span>~</span> <span class="per">2018.<i>x.x</i></span></div>
-        <div class="main-r">  <span class="val-per">状态：</span> <span class="val-per">超时</span> <span class="val-per">3天</span></div>
-      </div>
-      </a> 
-    </div>
-    
-    
-    
-    <div class="index-pad"> <a class="index-list index-che" >
-      <div class="main-l"> <span class="per">操作系统</span> </div>
-      <div class="list-main">
-        <div class=" clear "> <span class="circle-blue circle-c57">2018.<i>4.30</i></span> <span>~</span> <span class="per">2018.<i>x.x</i></span></div>
-        
-        <div class="main-r">  <span class="val-per">状态：</span> <span class="val-per">未超时</span> <span class="val-per"></span></div>
-      </div>
-      </a> 
-    </div>
-    
-    
-    <div class="index-pad"> <a class="index-list index-che" >
-      <div class="main-l"> <span class="per">数据结构</span> </div>
-      <div class="list-main">
-        <div class=" clear "> <span class="circle-blue circle-c57">2018.<i>4.30</i></span> <span>~</span> <span class="per">2018.<i>x.x</i></span></div>
-        
-        <div class="main-r">  <span class="val-per">状态：</span> <span class="val-per">未超时</span> <span class="val-per"></span></div>
-      </div>
-      </a> 
-    </div>
+    {% for book in books %}
+        <div class="index-pad"> <a class="index-list index-che" >
+          <div class="main-l"> <span class="per">{{ book.book_id }}</span> </div>
+          <div class="list-main">
+            <div class=" clear "> <span class="circle-blue circle-c57"> {{ book.borrow_time }}</span> <span>——</span> <span class="per">{{ book.ending_time }}</span></div>
+            <div class="main-r">  <span class="val-per">状态：</span> <span class="val-per">借阅中</span> <span class="val-per"></span></div>
+          </div>
+          </a>
+        </div>
+    {% endfor %}
+
 
     
   </div>

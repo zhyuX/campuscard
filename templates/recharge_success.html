@@ -1,0 +1,13 @@
+{% extends 'recharge.html'%}
+
+{% block money %} {{ re_value }}.00元 {% endblock %}
+
+    {% block tip %}
+        <link rel="stylesheet" type="text/css" href="/static/css/sweet-alert.css" />
+<div class="sweet-overlay" tabindex="-1" style="opacity: 1.0899999999999999; display: block;"></div>
+<div class="sweet-alert showSweetAlert visible" data-custom-class="" data-has-cancel-button="false" data-has-confirm-button="true" data-allow-ouside-click="false" data-has-done-function="true" data-animation="pop" data-timer="null" style="display: block; margin-top: -176px;">
+    <div class="sa-icon sa-error" style="display: none;"><span class="sa-x-mark"><span class="sa-line sa-left"></span><span class="sa-line sa-right"></span></span></div><div class="sa-icon sa-warning" style="display: none;"> <span class="sa-body"></span> <span class="sa-dot"></span> </div>
+    <div class="sa-icon sa-info" style="display: none;"></div> <div class="sa-icon sa-success animate" style="display: block;"> <span class="sa-line sa-tip animateSuccessTip"></span> <span class="sa-line sa-long animateSuccessLong"></span> <div class="sa-placeholder"></div>
+    <div class="sa-fix"></div> </div> <div class="sa-icon sa-custom" style="display: none;"></div> <h2>充值成功</h2><p style="display: block;">恭喜您，充值成功！</p><fieldset><input type="text" tabindex="3"><div class="sa-input-error"></div></fieldset>
+    <div class="sa-error-container"><div class="icon">!</div> <p>Not valid!</p></div> <button class="cancel" tabindex="2" style="display: none; box-shadow: none;">Cancel</button><button onclick="window.location.href='/index/'" class="confirm" tabindex="1" style="display: inline-block; background-color: rgb(174, 222, 244); box-shadow: rgba(174, 222, 244, 0.8) 0px 0px 2px, rgba(0, 0, 0, 0.0470588) 0px 0px 0px 1px inset;">OK</button></div>
+    {% endblock %}

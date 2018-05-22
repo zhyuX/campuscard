@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title></title>
+		<link href="/static/css/card-packet.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="/static/css/main.css">
+<!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<script src="/static/js/card-packet.js"></script>
+		<script src="/static/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="/static/js/cards.js" type="text/javascript"></script>
+	</head>
+	<body>
+		
+	   {% include 'base.html' with title='我的卡券'%}
+        <br /> <br /> 
+		
+		<div class="bg1"  >
+			<div class="cd-modal-action">
+			           <button onclick="showAndHidden1();" class="btn" >卡 <span class="badge" >4</span></button>
+			           <span class="cd-modal-bg"></span>
+		            </div> <!-- cd-modal-action -->
+		 <a href="#0" class="cd-modal-close">Close</a>  
+		 
+		 
+			<ol class="breadcrumb block_two" id="a" style.display=='none'>
+				<li>
+					<a href="">公交卡<span class="badge">1</span></a>
+				</li>
+				<li>
+					<a href="">水果店卡<span class="badge">1</span></a>
+				</li>
+			</ol>
+			
+			<div class="cd-modal-action">
+			            <button onclick="showAndHidden2();" class="btn" >券 <span class="badge" >4</span></button>
+			           <span class="cd-modal-bg"></span>
+		            </div> <!-- cd-modal-action -->
+		 <a href="#0" class="cd-modal-close">Close</a>  
+
+			<ol class="breadcrumb block_two" id="b" style.display=='none'>
+				<li>
+					<a href="">蜜雪冰城五折优惠券<span class="badge">仅限周二使用</span></a>
+				</li>
+			</ol>
+			<ol class="breadcrumb block_two" id="c" style.display=='none'>
+				<li>
+					<a href="">达克布蕾满40减20券<span class="badge">时间不限</span></a>
+				</li>
+			</ol>
+			
+			
+		</div>
+		
+
+	</body>
+</html>

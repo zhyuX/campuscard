@@ -5,6 +5,7 @@ from operation.models import AccessRecord, ConsumeRecord, Library
 from django.contrib.auth.models import Group, Permission, User
 from xadmin.models import Log
 
+
 # 创建xadmin的全局管理器并与view绑定
 class BaseSetting(object):
     # 开启主题功能
@@ -15,9 +16,9 @@ class BaseSetting(object):
 # xadmin 全局配置参数信息设置
 class GlobalSetting(object):
     site_title = '校园卡后台管理'
-    site_footer = '浙江工业大学'
+    site_footer = '浙江工业大学 BTH002小组作业 徐震宇组'
     # 收起菜单
-   #menu_style = 'accordion'
+    # menu_style = 'accordion'
 
     def get_site_menu(self):
         return (
@@ -43,12 +44,14 @@ class CardAdmin:
     list_display = ['card_id', 'balance', 'state', 'create_time']
     search_fields = ['card_id']
     list_filter = ['card_id', 'state', 'create_time']
+    model_icon = 'fa fa-address-card-o'
 
 
 class StudentAdmin:
     list_display = ['student_id', 'card_id', 'name', 'sex', 'college', 'grade', 'dormitory']
     search_fields = ['student_id', 'card_id__card_id', 'name', 'sex', 'college', 'grade', 'dormitory']
     list_filter = ['student_id', 'name', 'sex', 'college', 'grade', 'dormitory']
+    model_icon = 'fa fa-user-circle'
 
 
 # 注册后台

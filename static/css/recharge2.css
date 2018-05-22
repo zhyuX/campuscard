@@ -4,7 +4,7 @@
 }
 
 .pay {
-	width: 800px;
+	width: 360px;
 	margin: 150px auto;
 	background: #ccc;
 	border: 1px solid #e5e5e5;
@@ -22,7 +22,7 @@ a:focus {
 }
 
 .tr_recharge {
-	max-width: 800px;
+	max-width: 600px ;
 	background: #fff;
 	border-radius: 4px;
 	overflow: hidden;
@@ -30,7 +30,7 @@ a:focus {
 
 .tr_rechtext {
 	width: 100%;
-	padding: 10px;
+	padding: 0px;
 	background: #27b0d6;
 	color: #fff;
 }
@@ -59,10 +59,10 @@ a:focus {
 .tr_rechhead {
 	width: 100%;
 	background: rgba(39, 176, 214, .15);
-	padding: 20px;
+	padding: 8px;
 	display: inline-block;
 	float: left;
-	margin-bottom: 40px
+	margin-bottom: 30px
 }
 
 .tr_rechhead>img {
@@ -105,8 +105,8 @@ a:focus {
 	border: 1px solid #d7d7d7;
 	color: #555;
 	font-size: 18px;
-	padding: 15px 30px;
-	margin-right: 30px;
+	padding: 1px 3px;
+	margin-right: 3px;
 	border-radius: 4px;
 }
 
@@ -127,7 +127,7 @@ a:focus {
 
 .tr_rechcho label {
 	display: inline-block;
-	margin-right: 30px;
+	margin-right: 20px;
 }
 
 .tr_rechli {
@@ -138,7 +138,7 @@ a:focus {
 .tr_rechcho>span {
 	color: #666;
 	float: left;
-	line-height: 50px;
+	line-height: 70px;
 	margin-right: 10px;
 }
 
@@ -173,7 +173,7 @@ a:focus {
 }
 
 .tr_pay {
-	padding: 12px 30px;
+	padding: 2px 3px;
 	background: #27b0d6;
 	border-radius: 4px;
 	border: none;
@@ -193,7 +193,7 @@ a:focus {
 
 .tr_paybox span {
 	color: #999;
-	margin-left: 30px;
+	margin-left: 3px;
 }
 
 select.ui-choose {
@@ -360,14 +360,14 @@ ul.ui-choose.choose-flex>li {
 .am-radio-inline input[type=radio] {
 	margin: 0;
 	opacity: 0;
-	width: 100%;
-	height: 46px;
+	width: 80%;
+	height: 40px;
 	position: absolute;
 }
 
 .am-form-group .am-alert {
 	float: left;
-	width: auto;
+	width: 400px;
 	margin: auto;
 	border-radius: 4px;
 	line-height: 48px;
